@@ -24,7 +24,7 @@ function generateRandomCrashes():CrashItem[]{
             var apps = ['Red dead redemption', 'Battlefield 3', 'PUBG', 'Fortnite', 'Age of Empires', 'F1 2019', 'The Witcher 3', ' Zelda: Breath of the Wild', 'Pokemon Red']
             for(var i = 0; i < 200; i++){
                 
-                let id = prefix[randomNumber(5)] + randomNumber(1000);
+                let id = prefix[randomNumber(5)] + i + '-' + randomNumber(1000);
                 let errMsg = crashText[randomNumber(5)];
                 let os = osArr[randomNumber(3)];
                 let app = apps[randomNumber(9)];
