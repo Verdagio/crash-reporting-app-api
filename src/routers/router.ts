@@ -10,7 +10,7 @@ export class Router {
 
         app.route('/buckets')
             .get((req: express.Request, res: express.Response) => {
-                res.send(this.bucketItems)
+                res.send(this.bucketItems);
             });
 
         app.route('/buckets/:name')
@@ -45,17 +45,17 @@ export class Router {
             })
 
         app.route('/buckets/:name/items/:id')
-            .get((req: express.Request, res: express.Response) => {
-                let items: CrashItem[];
-                this.bucketItems.filter(bucket => {
-                    if(bucket.name === req.params.name.toUpperCase()){
-                        items = bucket.items;
-                    }
-                    return;
-                });
-                let item = items.find(ci => ci.crashId === req.params.id.toUpperCase());
-                res.send(item);
-            })
+            // .get((req: express.Request, res: express.Response) => {
+            //     let items: CrashItem[];
+            //     this.bucketItems.filter(bucket => {
+            //         if(bucket.name === req.params.name.toUpperCase()){
+            //             items = bucket.items;
+            //         }
+            //         return;
+            //     });
+            //     let item = items.find(ci => ci.crashId === req.params.id.toUpperCase());
+            //     res.send(item);
+            // })
             .delete((req: express.Request, res: express.Response)=>{
                 let bIndex: number;
                 let cIndex: number;
