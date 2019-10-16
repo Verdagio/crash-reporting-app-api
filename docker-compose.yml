@@ -2,13 +2,12 @@ version: "3"
 
 services:
   api:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
-    user: "node"
-    working_dir: /home/node/app
     volumes:
-      - .:/home/node/app
+      - '.:/home/node/app'
+      - '/home/node/app/node_modules'
     ports:
       - "5000:5000"
      # - "9443:9443"    SSL

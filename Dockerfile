@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:10
 
 # app directory
 WORKDIR /home/node/app
@@ -10,9 +10,8 @@ RUN npm install
 
 # bundle app source
 COPY . .
-
-# bind application to port 5000
+RUN npm run tsc
+# bind application to port 9000
 EXPOSE 5000
 
 CMD [ "npm", "start" ]
-
